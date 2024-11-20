@@ -8,6 +8,7 @@ const (
 	ProviderAdGuard    = "AdGuard (DNS-unfiltered)"
 	ProviderTencent    = "Tencent"
 	ProviderTWNIC      = "TWNIC"
+	ProviderProxy      = "Proxy"
 	ProviderUnknown    = "Unknown Provider"
 )
 
@@ -38,5 +39,5 @@ var ipToDnsProvider = map[string]string{
 }
 
 var prefixProviders = map[string]string{
-	"198.18": ProviderCloudflare,
+	"198.18": ProviderProxy,
 }

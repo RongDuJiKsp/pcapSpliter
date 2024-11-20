@@ -33,7 +33,7 @@ func newFlow(firstPkg gopacket.Packet, dumpPath string) (*flow, error) {
 		return nil, err
 	}
 	w := pcapgo.NewWriter(file)
-	if err = w.WriteFileHeader(1500, layers.LinkTypeEthernet); err != nil {
+	if err = w.WriteFileHeader(4000, layers.LinkTypeEthernet); err != nil {
 		_ = file.Close()
 		return nil, err
 	}

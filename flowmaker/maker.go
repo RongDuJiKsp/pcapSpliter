@@ -44,6 +44,9 @@ func MakeSession(file *os.File, dumpPath string) error {
 				}
 				continue
 			}
+			if ok {
+				flow.close()
+			}
 			flows[key] = newerFlow
 		}
 		flows[key].write(packet)
