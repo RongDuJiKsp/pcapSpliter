@@ -48,7 +48,11 @@ func (f *flow) write(p gopacket.Packet) {
 func (f *flow) syn() bool {
 	return f.size > FlowMinSize
 }
+func (f *flow) len() uint {
+	return f.size
+}
 
 func (f *flow) close() {
+	fmt.Printf("Key %s Flow close with size %d\n", f.key, f.size)
 	f.pcapFile.Close()
 }
