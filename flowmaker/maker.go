@@ -39,13 +39,13 @@ func MakeSession(file *os.File, dumpPath string) error {
 		flow, ok := flows[key]
 		if !ok || flow.syn() && tcp.SYN {
 			newerFlow, err := newFlow(packet, dumpPath)
-			fmt.Println("New flow", key)
 			if err != nil {
 				if !errors.Is(err, ErrorNoDoH) {
 					fmt.Println(err)
 				}
 				continue
 			}
+			fmt.Println("New flow", key)
 			if ok {
 				flow.close()
 			}
